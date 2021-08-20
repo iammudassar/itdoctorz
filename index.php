@@ -4,16 +4,14 @@
  * 
  * @package itdoctorz
  */
+ get_header();
 ?>
 
-<html>
-    <head>
-        <meta charset="UTF-8" >
-    
-        <title>IT Doctorz</title>
-    </head>
 
-    <body>
-        <H1> WELCOME TO IT DOCTORZ </H1>
-    </body>
-</html>
+        <div class="content">
+          <H1> WELCOME TO IT DOCTORZ </H1>
+
+        </div>
+
+<?php 
+ get_footer();
