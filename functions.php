@@ -2,9 +2,21 @@
 /**
  * Theme functions.
  * 
- * 1- 
  * @package itdoctorz
  */
+
+ if( ! defined('ITDOCTORZ_DIR_PATH') ){
+     define('ITDOCTORZ_DIR_PATH' , untrailingslashit( get_template_directory() )  );
+}
+
+require_once( ITDOCTORZ_DIR_PATH . '/inc/helpers/autoloader.php' );
+
+
+function itdoctorz_get_theme_instance(){
+ \ITDOCTORZ_THEME\Inc\ITDOCTORZ_THEME::getinstance();
+}
+
+itdoctorz_get_theme_instance();
 
  function itdoctorz_enqueue_scripts() { //  enqueue all the scrips 
     // registering all the styles

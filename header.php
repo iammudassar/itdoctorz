@@ -23,4 +23,10 @@
       wp_body_open();
     }
     ?>
-        <header> this is my header </header>
+
+    <div class="page" class="site">
+
+        <header id="mastheader" class="site-header" role="banner">  
+          <?php get_template_part('template-parts/header/nav') ?> 
+        </header>
+        <div class="content" class="site-content"> 
