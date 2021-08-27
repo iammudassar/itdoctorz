@@ -67,7 +67,6 @@ function autoloader( $resource = '' ) {
 				$file_name = sprintf( 'class-%s', trim( strtolower( $path[1] ) ) );
 				break;
 		}
-
 		$resource_path = sprintf( '%s/inc/%s/%s.php', untrailingslashit( ITDOCTORZ_DIR_PATH ), $directory, $file_name );
 
 	}

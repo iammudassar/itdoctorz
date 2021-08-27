@@ -6,40 +6,33 @@
  */
 
  if( ! defined('ITDOCTORZ_DIR_PATH') ){
-     define('ITDOCTORZ_DIR_PATH' , untrailingslashit( get_template_directory() )  );
+     define('ITDOCTORZ_DIR_PATH' , untrailingslashit( get_template_directory() ) );
+     
 }
 
-require_once( ITDOCTORZ_DIR_PATH . '/inc/helpers/autoloader.php' );
+if( ! defined('ITDOCTORZ_DIR_URI') ){
+   define('ITDOCTORZ_DIR_URI' , untrailingslashit( get_template_directory_uri() ) );
+   
+}
+if( ! defined('ITDOCTORZ_DIR_URI') ){
+   define('ITDOCTORZ_DIR_URI' , untrailingslashit( get_template_directory_uri() ) );
+   
+}
+
+
+require_once ITDOCTORZ_DIR_PATH . '/inc/helpers/autoloader.php' ;
+require_once ITDOCTORZ_DIR_PATH . '/inc/helpers/template-tags.php' ;
 
 
 function itdoctorz_get_theme_instance(){
- \ITDOCTORZ_THEME\Inc\ITDOCTORZ_THEME::getinstance();
+   \ITDOCTORZ_THEME\Inc\ITDOCTORZ_THEME::get_instance();
 }
 
 itdoctorz_get_theme_instance();
 
  function itdoctorz_enqueue_scripts() { //  enqueue all the scrips 
     // registering all the styles
-    wp_register_style('style-css', get_stylesheet_uri() , [], filemtime( get_template_directory().'/style.css' ), 'all' );
-    wp_register_style('bootstrap-css', get_template_directory_uri() . '/assets/src/library/css/bootstrap.min.css'  , [], false , 'all' );
-
-
-    // registering all the scripts
-    wp_register_script('main-js', get_template_directory_uri(). '/assets/main.js' , [ ] , filemtime( get_template_directory().'/assets/main.js' ) , true );
-    wp_register_script('bootstrap-js', get_template_directory_uri(). '/assets/src/library/js/bootstrap.min.js' , [ 'jquery' ] , false , true );
-
-
-    // enqueing all the styles may b based on conditions
-    wp_enqueue_style('style-css');
-    wp_enqueue_style('bootstrap-css');
-
-
-    // enqueing all the scripts may b based on conditions
-
-    wp_enqueue_script('main-js');
-    wp_enqueue_script('bootstrap-js');
-
-
+    
 }
 
  add_action('wp_enqueue_scripts' , 'itdoctorz_enqueue_scripts');
